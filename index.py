@@ -1,8 +1,9 @@
 #You will not be able to run this file here and will need to copy it onto your computer and run it on your machine.
 #You will also need to make sure you have installed the requests module from PyPi (pip install)
-import requests
 import hashlib
 import sys
+import requests
+
 
 def request_api_data(query_char):
   url = 'https://api.pwnedpasswords.com/range/' + query_char
@@ -28,9 +29,9 @@ def main(args):
   for password in args:
     count = pwned_api_check(password)
     if count:
-      print(f'{password} was found {count} times... you should probably change your password!')
+      print(f'{password} was found {count} times... you should probably change your password')
     else:
-      print(f'{password} was NOT found. Carry on!')
+      print(f'{password} was NOT found. Carry on.')
   return 'done!'
 
 if __name__ == '__main__':
